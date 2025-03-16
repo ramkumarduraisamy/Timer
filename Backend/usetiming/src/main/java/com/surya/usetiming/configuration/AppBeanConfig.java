@@ -1,15 +1,13 @@
 package com.surya.usetiming.configuration;
 
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpHeaders;
+import org.springframework.security.web.header.Header;
 import org.springframework.web.client.RestTemplate;
 
 @Configuration
-public class AppConfiguration {
-    @Value("${microsoftGraphApi.baseUrl}")
-    private String baseUrl;
+public class AppBeanConfig {
 
     @Bean
     public RestTemplate restTemplate() {
@@ -17,12 +15,7 @@ public class AppConfiguration {
     }
 
     @Bean
-    public HttpHeaders headers() {
+    public HttpHeaders header() {
         return new HttpHeaders();
-    }
-
-    @Bean
-    public String getBaseUrl() {
-        return this.baseUrl;
     }
 }
