@@ -6,10 +6,10 @@ import lombok.Setter;
 
 import java.util.List;
 
-@Entity
-@Table(name = "work_schedules_lookup")
 @Getter
 @Setter
+@Entity
+@Table(name = "work_schedules_lookup")
 public class WorkSchedule extends BaseModel{
     private String title;
 

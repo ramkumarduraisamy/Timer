@@ -22,11 +22,6 @@ public class WorkItem extends BaseModel{
     @JoinColumn(name = "user_id", referencedColumnName = "id")
     private User assignee;
 
-    @ManyToMany
-    @JoinTable(
-            name = "work_item_timesheet",
-            joinColumns = @JoinColumn (name = "work_item_id"),
-            inverseJoinColumns = @JoinColumn(name = "timesheet_id")
-    )
-    private List<Timesheet> timesheets;
+    @OneToMany(mappedBy = "workItem")
+    private List<WorkItemTimeSheet> workItemTimeSheets;
 }

@@ -30,10 +30,10 @@ public class Timesheet extends BaseModel {
     @JoinColumn(name = "log_type_id", referencedColumnName = "id")
     private LogType logType;
 
-    @ManyToMany(mappedBy = "timesheets", cascade = CascadeType.ALL)
-    private List<WorkItem> workItems;
-
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "project_id",referencedColumnName = "id")
     private Project project;
+
+    @OneToMany(mappedBy = "timesheet")
+    private List<WorkItemTimeSheet> workItemTimeSheets;
 }

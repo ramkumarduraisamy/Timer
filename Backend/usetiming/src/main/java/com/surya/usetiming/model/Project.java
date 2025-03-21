@@ -1,9 +1,6 @@
 package com.surya.usetiming.model;
 
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Entity;
-import jakarta.persistence.ManyToMany;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -17,6 +14,6 @@ public class Project extends BaseModel {
     private String title;
     private String description;
 
-    @ManyToMany(mappedBy = "projects")
-    private List<User> user;
+    @OneToMany(mappedBy = "project")
+    private List<ProjectUser> projectUsers;
 }

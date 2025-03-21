@@ -6,11 +6,12 @@ import lombok.Setter;
 
 import java.util.List;
 
-@Entity
-@Table(name = "roles_lookup")
 @Getter
 @Setter
+@Entity
+@Table(name = "roles_lookup")
 public class Role extends BaseModel{
+
     @Column(nullable = false)
     private String title;
 
